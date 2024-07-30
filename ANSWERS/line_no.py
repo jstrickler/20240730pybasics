@@ -1,8 +1,10 @@
 import sys
 
 for file_name in sys.argv[1:]:
+    print(file_name)
     with open(file_name) as file_in:
-        for i, line in enumerate(file_in, 1):
-            print(f"{i:4d}: {line.rstrip()}")
-
+        # for line in file_in:
+        for i, line in enumerate(file_in):
+            print(f"{i + 1:4d}: {line.rstrip()}")
+    print()
 

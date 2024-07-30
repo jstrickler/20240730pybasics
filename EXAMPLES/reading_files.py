@@ -17,7 +17,7 @@ with open(FILE_PATH) as mary_in:
     print(contents)
     print("=" * 20)
     print("RAW:")
-    print(repr(contents))  # print string in "raw" mode
+    print(repr(contents))  # print string in "raw" mode (useful for troubleshooting)
 print('-' * 60)
 
 with open(FILE_PATH) as mary_in:

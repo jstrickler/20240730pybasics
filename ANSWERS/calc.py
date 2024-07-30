@@ -1,5 +1,5 @@
-def add(x, y):
-    return x + y
+def add(operand1, operand2):
+    return operand1 + operand2
 
 def sub(x, y):
     return x - y
@@ -8,7 +8,7 @@ def mul(x, y):
     return x * y
 
 def div(x, y):
-    return x/y
+    return x / y
 
 while True:
     expr = input("Enter a math expression: ")

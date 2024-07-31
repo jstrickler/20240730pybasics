@@ -1,22 +1,15 @@
+import sys
+import sqlite3
+
+conn = None
 
 try:
-    x = 5
-    y = 37
-    z = x + y
-    print("z is", z)
-except TypeError as err:    # Catch TypeError
-    print("Caught exception:", err)
-finally:
-    print("Don't care whether we had an exception")  # Print whether TypeError is caught or not
-
-print()
-
-try:
-    x = 5
-    y = "cheese"
-    z = x + y
-    print("Bottom of try")
-except TypeError as err:
-    print("Caught exception:", err)
-finally:
-    print("Still don't care whether we had an exception")
+    conn = sqlite3.connect('spam.db')
+except sqlite3.DatabaseError as err:
+    print(err)
+    sys.exit()
+else:
+    result = conn.execute("select 5")
+finally:  # whether or not an error was raised
+    if conn:
+        conn.close()
